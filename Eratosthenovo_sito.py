@@ -80,7 +80,7 @@ time_values_1 = []
 i_values_2 = []
 time_values_2 = []
 
-for i in range (3, 10000):
+for i in range (3, 50):
     print(i)
     i_values_1.append(i)
     t = first_prime_alg(i)
