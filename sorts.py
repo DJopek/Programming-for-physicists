@@ -1,9 +1,11 @@
 import numpy as np
 import time
+import random
 
 n = int(input("input number of numbers: "))
 
-random_array =  np.random.rand(n)
+# random_array =  np.random.rand(n).tolist()
+random_array = np.random.rand(n)
 
 print(random_array)
 
@@ -31,6 +33,29 @@ def selection_sort(n):
 
     print(random_array)
 
+def quick_sort(arr):
+
+    # print(arr)
+    # print(len(arr))
+
+    if len(arr) <= 1:
+        return arr
+    
+    else:
+
+        pivot = arr[0]
+        right = []
+        left = []
+
+        for item in arr:
+
+            if item < pivot :
+                left.append(item)
+            elif pivot < item :
+                right.append(item)
+        
+    return quick_sort(left) + [pivot] + quick_sort(right)
+                    
 
 
 def measure_time(sort, array):
@@ -38,6 +63,9 @@ def measure_time(sort, array):
     sort(random_array)
     end_time = time.time()
     result_time = end_time - start_time
+    print(result_time)
 
 # bubble_sort(n)
-selection_sort(n)
+# selection_sort(n)
+# print(quick_sort(random_array))
+measure_time(quick_sort, random_array)
