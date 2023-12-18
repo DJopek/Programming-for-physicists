@@ -40,7 +40,7 @@ def monte_carlo_integration(a, b, n, epsilon) :
                 if diff < epsilon :
                     break
 
-monte_carlo_integration(0,1,10000, 0.1)
+monte_carlo_integration(0,1,100000, 0.01)
 
 def monte_carlo_volume(n, epsilon):
     n_down = 0
@@ -79,4 +79,4 @@ def monte_carlo_volume(n, epsilon):
                 if diff < epsilon :
                     break
 
-monte_carlo_volume(2, 0.002)
+# monte_carlo_volume(2, 0.002)
