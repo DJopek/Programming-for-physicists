@@ -104,14 +104,11 @@ def sigma_Re(sigma_h, sigma_rho, sigma_v, sigma_eta, rho, v, r, eta):
     return term1 + term2 + term3 + term4
 
 
-sigma_v_avg = 0.001
-sigma_eta_avg = 0.000003
-sigma_Re_avg = 1
 # Example usage
 sigma_v_sq = sigma_v_squared(sigma_V, sigma_t, sigma_r, t, V, r)
 # print("Sigma_v^2:", sigma_v_sq)
 
-sigma_v = (sigma_v_sq + sigma_v_avg**2)**0.5
+sigma_v = (sigma_v_sq)**0.5
 print("Sigma_v:", sigma_v)
 
 
@@ -125,7 +122,7 @@ print("Sigma_eta:", sigma_eta)
 sigma_Re_sq = sigma_Re(sigma_r, sigma_rho, sigma_v, sigma_eta, rho, v, r, eta)
 # print("Sigma_Re^2:", sigma_Re_sq)
 
-sigma_Re_val = (sigma_Re_sq + sigma_Re_avg**2)**0.5
+sigma_Re_val = (sigma_Re_sq)**0.5
 print("Sigma_Re:", sigma_Re_val)
 
 # data = [332.083, 332.035, 329.051, 267.055, 226.045, 193.031, 165.049]
