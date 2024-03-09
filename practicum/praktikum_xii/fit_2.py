@@ -3,16 +3,16 @@ import matplotlib.pyplot as plt
 
 # Load data from the file
 data = np.array([
-    [20, 332.083],
-    [20, 332.035],
-    [21, 329.051],
-    [30, 267.055],
-    [40, 226.045],
-    [50, 193.031],
-    [60, 165.049]
+    [20, 0.997101105],
+    [21, 0.988140153],
+    [30, 0.8019661650000001],
+    [40, 0.678813135],
+    [50, 0.579672093],
+    [60, 0.4956421470000001],
 ])
 
-x_values = data[:, 0]
+x_values = data[:, 0] + 273.15
+print(x_values)
 y_values = data[:, 1]
 
 # Perform exponential fit
@@ -26,8 +26,8 @@ y_fit_exp = a * np.exp(b * x_values)
 # Plot data and exponential fit
 plt.scatter(x_values, y_values, label='Data')
 plt.plot(x_values, y_fit_exp, color='red', label='Exponential Fit')
-plt.xlabel('x')
-plt.ylabel('y')
+plt.xlabel('T [K]')
+plt.ylabel('Viscosity [mm2 s-1]')
 plt.title('Exponential Fit')
 plt.legend()
 plt.savefig("fit_exp.png",dpi=600)

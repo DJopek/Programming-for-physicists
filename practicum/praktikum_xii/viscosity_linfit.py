@@ -57,22 +57,22 @@ t = 150.3
 d = V/(pi * r**2)
 sigma_d = ((1/(pi * r**2) *sigma_V)**2 + (-2*V/(pi * r**3) *sigma_r)**2)**0.5
 
-# v = []
-# nu = []
-# Re = []
+velocity = []
+nu = []
+Re = []
 
-# for i in range (len(data)):
-#     v.append(V/(data[i] * pi * r**2))
+for i in range (len(data)):
+    velocity.append(V/(data[i] * pi * r**2))
 
-# for i in range(len(data)):
-#     nu.append((pi * r**4 * h * rho * g * data[i])/(8 * V * l))
+for i in range(len(data)):
+    nu.append((pi * r**4 * h * rho * g * data[i])/(8 * V * l))
 
-# for i in range(len(v)):
-#     Re.append((2 * r * rho * v[i])/(nu[i]))
+for i in range(len(velocity)):
+    Re.append((2 * r * rho * velocity[i])/(nu[i]))
 
-# print(v)
-# print(nu)
-# print(Re)
+print(v)
+print(nu)
+print(Re)
 
 
 import math
@@ -116,14 +116,24 @@ print("Sigma_v:", sigma_v)
 
 
 sigma_eta_sq = sigma_eta_squared(sigma_r, sigma_h, sigma_rho, sigma_g, sigma_t, sigma_V, sigma_l, h, rho, g, t, V, l, r)
-print("Sigma_eta^2:", sigma_eta_sq)
+# print("Sigma_eta^2:", sigma_eta_sq)
 
 sigma_eta = (sigma_eta_sq)**0.5
 print("Sigma_eta:", sigma_eta)
 
 
-sigma_Re_sq = sigma_Re(sigma_d, sigma_rho, sigma_v, sigma_eta, rho, v, d, eta)
-print("Sigma_Re^2:", sigma_Re_sq)
+sigma_Re_sq = sigma_Re(sigma_r, sigma_rho, sigma_v, sigma_eta, rho, v, r, eta)
+# print("Sigma_Re^2:", sigma_Re_sq)
 
 sigma_Re_val = (sigma_Re_sq + sigma_Re_avg**2)**0.5
 print("Sigma_Re:", sigma_Re_val)
+
+# data = [332.083, 332.035, 329.051, 267.055, 226.045, 193.031, 165.049]
+
+# k = 0.003003
+# v = []
+
+# for i in range(len(data)):
+#     v.append(k*data[i]/1000000)
+
+# print(v)
