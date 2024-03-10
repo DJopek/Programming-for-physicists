@@ -1,38 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# data=np.loadtxt("data.txt")
-# print(data[:,1])
-# data_y = data[:,1]
+data=np.loadtxt("data.txt")
+data_y = data[:,1]
 
-# for i in range (len(data_y)):
-#     data_y[i] = np.log(data_y[i])
+for i in range (len(data_y)):
+    data_y[i] = np.log(data_y[i])
 
-# model,V=np.polyfit(data[:,0],data_y,1,cov=True)
-# y_fit=np.polyval(model,data[:,0])
-# fig,ax=plt.subplots()
+model,V=np.polyfit(data[:,0],data_y,1,cov=True)
+y_fit=np.polyval(model,data[:,0])
+fig,ax=plt.subplots()
 
-# ax.plot(data[:,0],y_fit,c="red")
-# ax.set_xlabel("x", fontsize=15)
-# ax.set_ylabel("y", fontsize=15)
+ax.plot(data[:,0],y_fit,c="red")
+ax.set_xlabel("x", fontsize=15)
+ax.set_ylabel("y", fontsize=15)
 # ax.set_yscale('log')
 
-# plt.savefig("fit_log_e.png",dpi=600)
+plt.savefig("fit_log_e.png",dpi=600)
 
-# print("y=ax+b")
-# print("a = ",model[0], "+/-", np.sqrt(V[0,0]))
-# print("b = ",model[1], "+/-", np.sqrt(V[1,1]))
-# print("cov(a,b) = ",V[0,1])
-# print("corr(a,b) = ",V[0,1]/(np.sqrt(V[0,0]*V[1,1])))
-
-# data = [332.083, 332.035, 329.051, 267.055, 226.045, 193.031, 165.049]
-# v = []
-# A = 0.003003
-
-# for i in range (len(data)):
-#     v.append(A * data[i])
-
-# print(v)
+print("y=ax+b")
+print("a = ",model[0], "+/-", np.sqrt(V[0,0]))
+print("b = ",model[1], "+/-", np.sqrt(V[1,1]))
+print("cov(a,b) = ",V[0,1])
+print("corr(a,b) = ",V[0,1]/(np.sqrt(V[0,0]*V[1,1])))
 
 data = [150.070, 152.072, 151.001, 153.030, 150.098, 150.064, 150.013, 149.073, 149.007, 149.087]
 
@@ -125,12 +115,20 @@ sigma_Re_sq = sigma_Re(sigma_r, sigma_rho, sigma_v, sigma_eta, rho, v, r, eta)
 sigma_Re_val = (sigma_Re_sq)**0.5
 print("Sigma_Re:", sigma_Re_val)
 
-# data = [332.083, 332.035, 329.051, 267.055, 226.045, 193.031, 165.049]
+data = [332.083, 332.035, 329.051, 267.055, 226.045, 193.031, 165.049]
 
-# k = 0.003003
-# v = []
+k = 0.003003
+v = []
 
-# for i in range(len(data)):
-#     v.append(k*data[i]/1000000)
+for i in range(len(data)):
+    v.append(k*data[i]/1000000)
 
-# print(v)
+print(v)
+
+rho = [998.2, 998.2, 998, 995.6, 992.2, 988, 983.2]
+eta = []
+
+for i in range(len(rho)):
+    eta.append(v[i]*rho[i])
+
+print(eta)
