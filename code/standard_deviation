@@ -1,15 +1,16 @@
 # n = int(input("Input number of numbers: "))
 # n = len(data)
 
-data = [12.499999999999998, 11.850000000000001]
-# data = [23.3, 23.65]
+data_10 = [24.19, 23.94, 24.50, 24.10, 24.33]
 
-# n = len(data_10)
-n = len(data)
-print(n)
+data = []
 
-# for i in range (n):
-#     data.append(data_10[i]/10)
+n = len(data_10)
+# n = len(data)
+# print(n)
+
+for i in range (n):
+    data.append(data_10[i]/10)
 
 # for i in range (n):
 #     number = float(input("Input a number: "))
