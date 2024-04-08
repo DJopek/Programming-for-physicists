@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Input data
-# data = np.array([214, 314, 432, 645, 853, 968, 1064, 1279, 1496, 1655])
-# data = np.array([214, 432, 645, 853, 1064, 1279, 1496, 1655, 1919, 2134])
-data = np.array([168, 342, 510, 676, 846, 1018, 1211, 1366, 1544, 1711])
+
+# data = np.array([0.0, 0.013999999999999985, 0.016000000000000014, 0.018999999999999986, 0.021999999999999992, 0.025, 0.026999999999999993, 0.03, 0.03300000000000001, 0.036, 0.038000000000000006, 0.040999999999999995, 0.044000000000000004, 0.04599999999999999, 0.049, 0.05199999999999999])
+# data = np.array([1.3, 2.2, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9, 10])
+data = np.array([4.5, 4.9, 5.4, 6.3, 8.2])
 
 
 # # Independent variable (x values)
@@ -30,7 +31,9 @@ data = np.array([168, 342, 510, 676, 846, 1018, 1211, 1366, 1544, 1711])
 # print("Slope:", slope)
 # print("Intercept:", intercept)
 # Independent variable (x values)
-x = np.arange(1, len(data) + 1)
+# x = np.array([1, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9])
+# x = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+x = np.array([0.01, 0.03, 0.06, 0.11, 0.21])
 
 # Perform linear regression
 slope, intercept = np.polyfit(x, data, 1)
@@ -41,9 +44,9 @@ predicted = slope * x + intercept
 # Plotting the data and the linear fit
 plt.scatter(x, data, label='Data')
 plt.plot(x, predicted, color='red', label='Linear Fit')
-plt.xlabel('k')
-plt.ylabel('f [Hz]')
-plt.title('Závislosť frekvencie od počtu polvĺn')
+plt.xlabel('m [kg]')
+plt.ylabel('Prehyb [mm]')
+plt.title('Závislosť prehybu od hmotnosti závaží mosadz')
 plt.legend()
 plt.grid(True)
 plt.show()
