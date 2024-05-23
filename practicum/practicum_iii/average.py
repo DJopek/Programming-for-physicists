@@ -5,7 +5,6 @@
 
 # data = [2.5, 2.4, 2.6]
 # data = [3.6, 2.7, 3]
-data = [4.4, 4.2, 4]
 
 # n = len(data_10)
 n = len(data)
