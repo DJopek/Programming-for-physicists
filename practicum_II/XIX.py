@@ -65,6 +65,9 @@ d_4 = [-4.3, -4.9, -5.7, -6.5, -7, -7.8, -8.5, -9.3, -9.9]
 d_0_4 = -9.9
 x_4 = []
 
+print("")
+print("")
+
 def x_vals(d_0, d, x):
     for i in range(len(d)):
         x.append(abs(d_0 - d[i]))
@@ -90,12 +93,21 @@ a_vals(x_2, a_2)
 a_vals(x_3, a_3)
 a_vals(x_4, a_4)
 
+print("")
+print("")
+
 k, sigma_k = fit_4(a_1, a_2, a_3, a_4, I_1, I_2, I_3, I_4)
+
+print("")
+print("")
 
 print("k: ")
 print(np.array(k))
 print("sigma_k: ")
 print(np.array(sigma_k))
+
+print("")
+print("")
 
 p = []
 sigma_p = []
@@ -111,16 +123,25 @@ print(np.array(p))
 print("sigma p: ")
 print(np.array(sigma_p))
 
+print("")
+print("")
+
 statistics(p)
+
+print("")
+print("")
 
 print("p Amper: ")
 print(np.array(p)/(4*pi*10**(-7)))
+
+print("")
+print("")
 
 statistics(np.array(p)/(4*pi*10**(-7)))
 
 
 
-a, sigma_a, b, sigma_b = fit_n(data_list=[a_1, a_2], x_list=[I_1, I_2], colors=['orange', 'red'], labels=['N=10, r=12.5cm', 'N=5, r=12.5cm'], x_label="I[A]", y_label=r"$\alpha$[rad]")
+# a, sigma_a, b, sigma_b = fit_n(data_list=[a_1, a_2], x_list=[I_1, I_2], colors=['orange', 'red'], labels=['N=10, r=12.5cm', 'N=5, r=12.5cm'], x_label="I[A]", y_label=r"$\alpha$[rad]")
 
 # print(np.array(a))
 # print(np.array(b))
