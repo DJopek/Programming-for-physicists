@@ -96,6 +96,14 @@ a_vals(x_4, a_4)
 print("")
 print("")
 
+print(a_1)
+print(a_2)
+print(a_3)
+print(a_4)
+
+print("")
+print("")
+
 k, sigma_k = fit_4(a_1, a_2, a_3, a_4, I_1, I_2, I_3, I_4)
 
 print("")
@@ -133,11 +141,15 @@ print("")
 
 print("p Amper: ")
 print(np.array(p)/(4*pi*10**(-7)))
+print("sigma p Amper: ")
+print(np.array(sigma_p)/(4*pi*10**(-7)))
 
 print("")
 print("")
 
+statistics(np.array(sigma_p))
 statistics(np.array(p)/(4*pi*10**(-7)))
+statistics(np.array(sigma_p)/(4*pi*10**(-7)))
 
 
 

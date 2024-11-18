@@ -15,7 +15,10 @@ def polynomial_fit(x_data, y_data, custom_function):
 
     plt.scatter(x_data, y_data, marker='^', s=100, label='namerané hodnoty')
     plt.errorbar(x_data, y_data, fmt='^', capsize=7)
-    plt.plot(x_data, custom_function(x_data, *fitted_params), color='orange', linestyle=':', label='fit')
+
+    x = np.linspace(np.min(x_data), np.max(x_data), 100)
+
+    plt.plot(x, custom_function(x, *fitted_params), color='orange', linestyle=':', label='fit')
     plt.xlabel('C [μF]')
     # plt.ylabel('T [s]')
     plt.ylabel(r'$R_{ap}$ [Ω]')
