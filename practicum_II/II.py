@@ -359,3 +359,35 @@ plt.title('')
 plt.legend()
 
 plt.show()
+
+
+I_r = np.array(I_r)
+I_r = I_r*1000
+
+plt.scatter(A_a, R_a, color='orange', marker='o', s=25, label='Odpor z priamej metódy a)')
+plt.errorbar(A_a, R_a, yerr=sigma_R_a , xerr=sigma_A_a , fmt='o', capsize=7, color="orange")
+
+plt.scatter(A_a, R_a_correct, color='blue', marker='o', s=25, label='Odpor z priamej metódy a) - korekcia')
+plt.errorbar(A_a, R_a_correct, yerr=sigma_R_a_correct, xerr=sigma_A_a, fmt='o', capsize=7, color="blue")
+
+plt.scatter(I_r, R_b, color='black', marker='o', s=25, label='Odpor z priamej metódy b)')
+plt.errorbar(I_r, R_b, yerr=sigma_R_b, xerr=sigma_I_r, fmt='o', capsize=7, color="black")
+
+plt.scatter(I_r, R_b_correct, color='yellow', marker='o', s=25, label='Odpor z priamej metódy b) - korekcia')
+plt.errorbar(I_r, R_b_correct, yerr=sigma_R_b_correct, xerr=sigma_I_r, fmt='o', capsize=7, color="yellow")
+
+
+plt.scatter(A, R, color='red', marker='o', s=25, label='Odpor na dekáde')
+plt.errorbar(A, R, yerr=sigma_R, xerr=sigma_A_subst, fmt='o', capsize=7, color="red")
+
+plt.scatter(A, R_i, color='purple', marker='o', s=25, label='Vypočítaný odpor')
+plt.errorbar(A, R_i, yerr=sigma_R_i, xerr=sigma_A_subst, fmt='o', capsize=7, color="purple")
+
+
+plt.ylabel('R[Ω]')
+plt.xlabel('I[mA]')
+plt.title('')
+
+plt.legend()
+
+plt.show()
