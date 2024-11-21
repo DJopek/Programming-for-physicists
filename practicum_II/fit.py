@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
-def polynomial_fit(x_data, y_data, custom_function):
+def fit(x_data, y_data, custom_function):
 
     params, covariance = curve_fit(custom_function, x_data, y_data)
 
