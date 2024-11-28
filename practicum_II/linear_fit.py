@@ -358,7 +358,7 @@ def fit_n(data_list, x_list, colors, labels, x_label, y_label):
         predicted = slope * x + intercept
 
         plt.scatter(x, data, marker='o', s=10, label=f'{label}')
-        plt.plot(x, predicted, color=color, linestyle=':', label=f' ')
+        plt.plot(x, predicted, color=color, linestyle=':', label=f'fit')
         
         # print(f"{label} - Slope:", slope)
         # print(f"{label} - Intercept:", intercept)
