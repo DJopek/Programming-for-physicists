@@ -19,8 +19,8 @@ def fit(x_data, y_data, custom_function):
     x = np.linspace(np.min(x_data), np.max(x_data), 100)
 
     plt.plot(x, custom_function(x, *fitted_params), color='orange', linestyle=':', label='fit')
-    plt.xlabel(r'$U_{BE}$ [V]')
+    plt.ylabel(r'$U$ [V]')
     # plt.ylabel('T [s]')
-    plt.ylabel(r'$I_{B}$ [mA]')
+    plt.xlabel(r'$C$ [μF]')
     plt.legend()
     plt.show()
