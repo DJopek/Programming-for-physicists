@@ -400,7 +400,7 @@ print("sigma FF")
 print(sigma_FF)
 
 for i in range(len(P_max)):
-    eta.append(P_max[i]/P_sun[i]*30)
+    eta.append(P_max[i]/P_sun[i]*3)
     sigma_eta.append(sigma_P_max[i])
 
 print("")
