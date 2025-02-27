@@ -309,22 +309,22 @@ print(J_2)
 statistics(J_2)
 
 
-def calculate_error(measured_value, percentage_error, absolute_error):
+def calculate_error(measured_value, percentage_error):
     relative_error = (percentage_error / 100) * measured_value
-    total_error = relative_error + absolute_error
-    return total_error
+    # total_error = relative_error + absolute_error
+    return relative_error
 
 percentage_error = 3
-absolute_error = 10
+# absolute_error = 10
 
 sigma_E_1 = []
 sigma_E_2 = []
 
 for i in range(len(E_1)):
-    sigma_E_1.append(calculate_error(E_1[i], percentage_error, absolute_error))
+    sigma_E_1.append(calculate_error(E_1[i], percentage_error))
 
 for i in range(len(E_2)):
-    sigma_E_2.append(calculate_error(E_2[i], percentage_error, absolute_error))
+    sigma_E_2.append(calculate_error(E_2[i], percentage_error))
 
 sigma_r = 1/2000
 sigma_J_1 = []
