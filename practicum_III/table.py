@@ -15,7 +15,7 @@ def round_values(y, x):
     elif num_list[0] != "0":
         for i in range(len(num_list)):
             if num_list[i] == ".":
-                j = i
+                j = i - 1
         p = (-1)*j
     return round(y, p)
 
@@ -32,7 +32,5 @@ def table(values, errors):
     num_rows = len(values[0])
 
     for i in range(num_rows):
-        row = " & ".join(f"{values[j][i]}\\pm{errors[j][i]}" for j in range(len(values)))
-        print(row)
-
-table(values=[P,I,R], errors=[sigma_P,sigma_I,sigma_R])
+        row = " & ".join(f"{values[j][i]} $\\pm$ {errors[j][i]}" for j in range(len(values)))
+        print(row + " \\\\ \\hline")
