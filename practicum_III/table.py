@@ -29,6 +29,10 @@ def round_values_errors(values, errors):
     return values_rounded, errors_rounded
 
 def table(values, errors):
+    
+    for i in range(len(values)):
+        values[i], errors[i] = round_values_errors(values[i], errors[i])
+
     num_rows = len(values[0])
 
     for i in range(num_rows):
