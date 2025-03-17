@@ -88,11 +88,11 @@ plt.legend()
 plt.grid(False)
 plt.show()
 
-plt.plot(np.array(U_5_1), np.array(I_f_5_1), color="blue", marker='o',markersize=1 , label='0.2A', linestyle="-")
+plt.plot(np.array(U_5_1), np.array(I_f_5_1), color="blue", marker='o',markersize=1 , label='0.2mA', linestyle="-")
 plt.plot(np.array(U_5_2), np.array(I_f_5_2), color="blue", marker='o',markersize=1 , label='', linestyle="-")
-plt.plot(np.array(U_6_1), np.array(I_f_6_1), color="black", marker='o',markersize=1 , label='0.4A', linestyle="-")
+plt.plot(np.array(U_6_1), np.array(I_f_6_1), color="black", marker='o',markersize=1 , label='0.4mA', linestyle="-")
 plt.plot(np.array(U_6_2), np.array(I_f_6_2), color="black", marker='o',markersize=1 , label='', linestyle="-")
-plt.plot(np.array(U_7_1), np.array(I_f_7_1), color="orange", marker='o',markersize=1 , label='0.6A', linestyle="-")
+plt.plot(np.array(U_7_1), np.array(I_f_7_1), color="orange", marker='o',markersize=1 , label='0.6mA', linestyle="-")
 plt.plot(np.array(U_7_2), np.array(I_f_7_2), color="orange", marker='o',markersize=1 , label='', linestyle="-")
 plt.xlabel("U[V]")
 plt.ylabel("I[A]")
@@ -274,8 +274,8 @@ def fit_ln_vals(I_f, U_f):
     U_vals_for_fit = []
 
     for i in range(len(I_f)):
-        # if i>=45 and i<=70: #yellow
-        if i>=45 and i<=60: #blue
+        if i>=45 and i<=70: #yellow
+        # if i>=45 and i<=60: #blue
             I_f_fit.append(I_f[i])
             U_vals_for_fit.append(U_f[i])
 
