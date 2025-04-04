@@ -14,14 +14,14 @@ def fit(x_data, y_data, custom_function):
         print(f"Fitted parameter {i}: {param} ± {error}")
 
     plt.scatter(x_data, y_data, marker='o', s=10, label='hodnoty')
-    plt.errorbar(x_data, y_data, fmt='o', capsize=7)
+    # plt.errorbar(x_data, y_data, fmt='o', capsize=7)
 
     x = np.linspace(np.min(x_data), np.max(x_data), 100)
     # x = np.linspace(0, np.max(x_data), 100)
 
     plt.plot(x, custom_function(x, *fitted_params), color='orange', linestyle=':', label='fit')
-    plt.xlabel(r'B [T]')
-    plt.ylabel(r'$\alpha\ [^\circ]$')
+    plt.xlabel(r'$\Delta X$ [cm]')
+    plt.ylabel(r'D [mm]')
     plt.legend()
     plt.show()
 
