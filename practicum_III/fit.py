@@ -20,8 +20,8 @@ def fit(x_data, y_data, custom_function):
     # x = np.linspace(0, np.max(x_data), 100)
 
     plt.plot(x, custom_function(x, *fitted_params), color='orange', linestyle=':', label='fit')
-    plt.xlabel(r'$\Delta X$ [cm]')
-    plt.ylabel(r'D [mm]')
+    plt.ylabel(r'n')
+    plt.xlabel(r'$c_V$ [%]')
     plt.legend()
     plt.show()
 

@@ -29,7 +29,7 @@ def round_values_errors(values, errors):
     return values_rounded, errors_rounded
 
 def table(values, errors):
-    
+
     for i in range(len(values)):
         values[i], errors[i] = round_values_errors(values[i], errors[i])
 
@@ -37,4 +37,12 @@ def table(values, errors):
 
     for i in range(num_rows):
         row = " & ".join(f"{values[j][i]} $\\pm$ {errors[j][i]}" for j in range(len(values)))
+        print(row + " \\\\ \\hline")
+
+def table_justvalues(values):
+
+    num_rows = len(values[0])
+
+    for i in range(num_rows):
+        row = " & ".join(f"{values[j][i]}" for j in range(len(values)))
         print(row + " \\\\ \\hline")
