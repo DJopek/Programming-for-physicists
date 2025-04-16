@@ -20,8 +20,8 @@ def fit(x_data, y_data, custom_function):
     # x = np.linspace(0, np.max(x_data), 100)
 
     plt.plot(x, custom_function(x, *fitted_params), color='orange', linestyle=':', label='fit')
-    plt.ylabel(r'n')
-    plt.xlabel(r'$c_V$ [%]')
+    plt.xlabel(r'$2\vartheta [deg]$')
+    plt.ylabel(r'R [Imp/s]')
     plt.legend()
     plt.show()
 
