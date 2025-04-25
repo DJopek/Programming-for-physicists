@@ -8,11 +8,14 @@ def round_to_1(x):
             return float(1)
         elif x == float(0):
             return float(0)
+        else:
+            return round(x, -int(floor(log10(abs(x)))))
     else:
         return round(x, -int(floor(log10(abs(x)))))
     
 def round_values(y, x):
     num_list = list(str(x))
+
     if num_list[0] == "0":
         p = len(num_list)-2
         number = list(str(round(y,p)))

@@ -22,3 +22,5 @@ def statistics(data):
 
     average_error = standard_deviation * 1/(n**0.5)
     print("The error of average is: " + str(average_error))
+
+    return average, standard_deviation, average_error
