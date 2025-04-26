@@ -34,6 +34,7 @@ def speed(ratio):
     return 8*3.1415*(f+2*a)*f/ratio
 
 f = 5.00
+sigma_f = 0.01
 a = avg
 
 #1
@@ -49,7 +50,7 @@ for i in range(len(nu)):
     sigma_nu_1[i] = sigma_nu_1[i]/2
 
 x_1 = x_vals(x, x_0)
-# fit(nu, x_1, linfit)
+fit(nu, x_1, linfit)
 
 ratio_1 = 1.3166457714211944*10**(-5)
 # sigma_ratio_1 = 
@@ -73,7 +74,7 @@ for i in range(len(x)):
     x[i] = x[i]/1000
 
 x_2 = x_vals(x, x_0)
-# fit(nu, x_2, linfit)
+fit(nu, x_2, linfit)
 
 ratio_2 = 1.3278983520033001*10**(-5)
 
@@ -96,7 +97,7 @@ for i in range(len(x)):
     x[i] = x[i]/1000
 
 x_3 = x_vals(x, x_0)
-# fit(nu, x_3, linfit)
+fit(nu, x_3, linfit)
 
 ratio_3 = 1.2235869491303959*10**(-5)
 
@@ -124,6 +125,23 @@ for i in range(len(x_3)):
 # fit_err(nu_2, x_2, sigma_nu_2, sigma_x_2, linfit)
 # fit_err(nu_3, x_3, sigma_nu_3, sigma_x_3, linfit)
 
+ratio = [ratio_1, ratio_2, ratio_3]
+sigma_ratio = [4.904072074840024*10**(-7), 3.185183673197847*10**(-7), 3.2962649275736096*10**(-7)]
+
+sigma_c = []
+for i in range(len(ratio)):
+    sigma_c.append(
+        (
+            (16*3.1415*(f+a)*sigma_f/ratio[i])**2
+            +(16*3.1415*f*sigma_a/ratio[i])**2
+            +(8*3.1415*(f+2*a)*f*sigma_ratio[i]/ratio[i]**2)**2
+        )**0.5
+    )
+
 c = [c_1, c_2, c_3]
 
 statistics(c)
+
+print("")
+print(c)
+print(sigma_c)
